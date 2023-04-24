@@ -1,0 +1,43 @@
+body {
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin: 12px 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+    min-height: 83vh;
+}
+
+.myInput {
+    width: 50%;
+    width: 30%;
+    padding: 9px;
+    margin: 9px;
+    font-size: 15px;
+    border: 2px solid #b54141;
+    border-radius: 7px;
+    outline: none;
+}
+
+.myForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 25px;
+    margin: 12px;
+    color: white;
+    background-color: #ee4d4d;
+    border-radius: 10px;
+    border: 2px solid black;
+    outline: none;
+}
