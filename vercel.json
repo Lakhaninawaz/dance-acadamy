@@ -3,7 +3,7 @@
     "name": "dance-acadamy",
     "builds": [
       {
-        "src": "app.js",
+        "src": "./app.js",
         "use": "@vercel/node"
       }
     ],
