@@ -2,7 +2,7 @@
   "name": "nawaz-dance-acadamy",
   "version": "1.0.0",
   "description": "this is a website for populer dance acadamy",
-  "main": "index.js",
+  "main": "app.js",
   "engines": {
     "node": "18.x"
   },
