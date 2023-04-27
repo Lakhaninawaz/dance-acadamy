@@ -3,7 +3,7 @@
     "name": "dance-acadamy",
     "builds": [
       {
-        "src": "./app.js",
+        "src": "./index.js",
         "use": "@vercel/node",
           "config": {
             "NODE_ENV": "production"
@@ -19,7 +19,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "app.js"
+        "dest": "index.js"
       }
     ]
   }
