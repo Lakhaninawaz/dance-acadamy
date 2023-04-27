@@ -5,16 +5,15 @@ const fs = require('fs');
 const port = 8000;
 const bodyparser = require("body-parser");
 var alert = require('alert');
-const uri = "mongodb+srv://vercel-admin-user:<password>@cluster0.nuygsqc.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://vercel-admin-user:Vercel123@cluster0.nuygsqc.mongodb.net/?retryWrites=true&w=majority";
 
-// getting-started.js
 const mongoose = require("mongoose");
  
 // const Router = require("./routes")
 
 app.use(express.json());
 
-mongoose.connect('mongodb://127.0.0.1/contact',
+mongoose.connect(uri,
   {
     useNewUrlParser: true
   }
