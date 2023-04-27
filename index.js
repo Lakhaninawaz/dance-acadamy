@@ -4,7 +4,6 @@ const app = express();
 const fs = require('fs');
 const port = 8000;
 const bodyparser = require("body-parser");
-var alert = require('alert');
 const uri = "mongodb+srv://vercel-admin-user:Vercel123@cluster0.nuygsqc.mongodb.net/?retryWrites=true&w=majority";
 
 const mongoose = require("mongoose");
