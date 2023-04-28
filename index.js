@@ -46,9 +46,10 @@ app.get('/', (req, res)=>{
 })
 
 // ENDPOINTS
-app.get('/contact', (req, res)=>{
+app.get('/contact', (req, res, err)=>{
     const params = {}
     res.status(200).render('contact.pug', params);
+    console.log(err);
 })
 
 app.post('/contact', (req, res)=>{
