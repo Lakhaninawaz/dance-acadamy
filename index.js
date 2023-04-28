@@ -4,7 +4,7 @@ const app = express();
 const fs = require('fs');
 const port = 8000;
 const bodyparser = require("body-parser");
-const uri = "mongodb+srv://vercel-admin-user:Vercel123@cluster0.nuygsqc.mongodb.net/?retryWrites=true&w=majority";
+const MONGODB_URI = "mongodb+srv://vercel-admin-user:Vercel123@cluster0.nuygsqc.mongodb.net/?retryWrites=true&w=majority";
 
 const mongoose = require("mongoose");
  
@@ -12,7 +12,7 @@ const mongoose = require("mongoose");
 
 app.use(express.json());
 
-mongoose.connect(uri,
+mongoose.connect(MONGODB_URI,
   {
     useNewUrlParser: true
   }
