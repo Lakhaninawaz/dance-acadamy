@@ -49,19 +49,12 @@ app.get('/', (req, res)=>{
 app.get('/contact', (req, res, err)=>{
     const params = {}
     res.status(200).render('contact.pug', params);
-    console.log(err);
 })
 
 app.post('/contact', (req, res)=>{
   var myData = new Contact(req.body);
   myData.save().then(()=>{
-    fs.readFile('alert.html', (err, data) => {
-      if (err) throw err;
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
-    // res.render('contact', {message: 'Thank you for contacting us. We will get back to you soon.'});
+    res.status(201).render("home")
     }).catch(()=>{
       res.status(400).send("Item not saved in the database")
     })
