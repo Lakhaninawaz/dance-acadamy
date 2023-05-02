@@ -9,7 +9,11 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
     "dev" : "nodemon src/index.js -e js,hbs"
+=======
+    "dev" : "nodemon src/app.js"
+>>>>>>> 8e357d561096faba7aafeecbc7d2e4fac9be7dc1
   },
   "keywords": [
     "dance",
