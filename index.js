@@ -56,7 +56,7 @@ app.get('/contact', (req, res, err)=>{
 })
 
 app.post('/contact', (req, res)=>{
-  var myData = new Contact(req.body);
+  const myData = new Contact(req.body);
   myData.save().then(()=>{
     res.status(201).render("home")
     }).catch(()=>{
