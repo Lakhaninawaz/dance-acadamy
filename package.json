@@ -9,11 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
-    "dev" : "nodemon src/index.js -e js,hbs"
-=======
-    "dev" : "nodemon src/app.js"
->>>>>>> 8e357d561096faba7aafeecbc7d2e4fac9be7dc1
+    "dev": "nodemon src/index.js -e js,hbs"
   },
   "keywords": [
     "dance",
@@ -24,6 +20,7 @@
   "dependencies": {
     "alert": "^5.1.4",
     "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongodb": "^5.3.0",
     "mongoose": "^7.0.3",

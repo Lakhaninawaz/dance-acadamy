@@ -1,10 +1,11 @@
+require('dotenv').config();
+
 const express = require("express");
 const path = require("path");
 const app = express();
 const fs = require('fs');
 const port = 8000;
 const bodyparser = require("body-parser");
-const MONGODB_URI = "mongodb+srv://vercel-admin-user:Vercel123@cluster0.nuygsqc.mongodb.net/?retryWrites=true&w=majority";
 
 const mongoose = require("mongoose");
  
@@ -12,11 +13,14 @@ const mongoose = require("mongoose");
 
 app.use(express.json());
 
-mongoose.connect(MONGODB_URI,
-  {
-    useNewUrlParser: true
-  }
-);
+mongoose.connect("mongodb://127.0.0.1/"+process.env.DB_HOST, {
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+}).then(() => {
+    console.log(`connection Successful`);
+}).catch((e)  => {
+    console.log(e);
+})
 
 
 // Define mongoose schema
