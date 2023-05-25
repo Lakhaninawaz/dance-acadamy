@@ -41,12 +41,12 @@ app.use(bodyparser.urlencoded({extended: true}));
 
 // PUG SPECIFIC STUFF
 app.set('view engine', 'pug') // Set the template engine as pug
-app.set('/var/task/views', path.join(__dirname, 'views')) // Set the views directory
+app.set('views', path.join(__dirname, './var/task/views')) // Set the views directory
 
 // ENDPOINTS
 app.get('/', (req, res)=>{
     const params = {}
-    res.status(200).render('/var/task/views/home.pug', params);
+    res.status(200).render(__dirname + '/var/task/views/home.pug', params);
 })
 
 // ENDPOINTS
