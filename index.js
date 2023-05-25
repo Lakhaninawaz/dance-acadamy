@@ -36,29 +36,29 @@ const Contact = mongoose.model('Contact', contactSchema);
  
 
 // EXPRESS SPECIFIC STUFF
-app.use('/static', express.static('static')) // For serving static files
+app.use('/var/task/static', express.static('static')) // For serving static files
 app.use(bodyparser.urlencoded({extended: true}));
 
 // PUG SPECIFIC STUFF
 app.set('view engine', 'pug') // Set the template engine as pug
-app.set('views', path.join(__dirname, 'views')) // Set the views directory
+app.set('/var/task/views', path.join(__dirname, 'views')) // Set the views directory
 
 // ENDPOINTS
 app.get('/', (req, res)=>{
     const params = {}
-    res.status(200).render('home.pug', params);
+    res.status(200).render('/var/task/views/home.pug', params);
 })
 
 // ENDPOINTS
 app.get('/contact', (req, res, err)=>{
     const params = {}
-    res.status(200).render('contact.pug', params);
+    res.status(200).render('/var/task/views/contact.pug', params);
 })
 
 app.post('/contact', (req, res)=>{
   const myData = new Contact(req.body);
   myData.save().then(()=>{
-    res.status(201).render("home")
+    res.status(201).render("/var/task/views/contact")
     }).catch(()=>{
       res.status(400).send("Item not saved in the database")
     })
