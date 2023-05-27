@@ -13,7 +13,7 @@ const mongoose = require("mongoose");
 
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1/"+process.env.DB_HOST, {
+mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(() => {
@@ -41,7 +41,7 @@ app.use(bodyparser.urlencoded({extended: true}));
 
 // PUG SPECIFIC STUFF
 app.set('view engine', 'pug') // Set the template engine as pug
-app.set('views', path.join(__dirname, '/views')) // Set the views directory
+app.set('views', path.join(__dirname, 'views')) // Set the views directory
 
 // ENDPOINTS
 app.get('/', (req, res)=>{
@@ -52,13 +52,13 @@ app.get('/', (req, res)=>{
 // ENDPOINTS
 app.get('/contact', (req, res, err)=>{
     const params = {}
-    res.status(200).render('/views/contact.pug', params);
+    res.status(200).render(__dirname + '/views/contact.pug', params);
 })
 
 app.post('/contact', (req, res)=>{
   const myData = new Contact(req.body);
   myData.save().then(()=>{
-    res.status(201).render("/views/contact")
+    res.status(201).render(__dirname + "/views/contact")
     }).catch(()=>{
       res.status(400).send("Item not saved in the database")
     })
